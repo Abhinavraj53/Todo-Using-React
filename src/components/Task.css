@@ -1,0 +1,39 @@
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.task-number {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.task span {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.task input[type="text"] {
+    width: 70%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTask, editTask, toggleTask } from '../redux/actions';
+import './Task.css'; // Import the CSS file for Task
 
-const Task = ({ task }) => {
+const Task = ({ task, index }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [newText, setNewText] = useState(task.text);
     const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Task = ({ task }) => {
 
     return (
         <div className={`task ${task.completed ? 'completed' : ''}`}>
+            <div className="task-number" style={{ backgroundColor: 'var(--accent-color)' }}>{index}</div>
             {isEditing ? (
                 <input
                     type="text"
