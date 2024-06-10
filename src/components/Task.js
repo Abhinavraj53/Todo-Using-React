@@ -27,7 +27,7 @@ const Task = ({ task }) => {
     };
 
     return (
-        <div style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+        <div className={`task ${task.completed ? 'completed' : ''}`}>
             {isEditing ? (
                 <input
                     type="text"
@@ -37,15 +37,17 @@ const Task = ({ task }) => {
             ) : (
                 <span>{task.text}</span>
             )}
-            <button onClick={handleToggle}>
-                {task.completed ? 'Undo' : 'Complete'}
-            </button>
-            <button onClick={handleDelete}>Delete</button>
-            {isEditing ? (
-                <button onClick={handleSave}>Save</button>
-            ) : (
-                <button onClick={handleEdit}>Edit</button>
-            )}
+            <div>
+                <button onClick={handleToggle}>
+                    {task.completed ? 'Undo' : 'Complete'}
+                </button>
+                <button onClick={handleDelete}>Delete</button>
+                {isEditing ? (
+                    <button onClick={handleSave}>Save</button>
+                ) : (
+                    <button onClick={handleEdit}>Edit</button>
+                )}
+            </div>
         </div>
     );
 };

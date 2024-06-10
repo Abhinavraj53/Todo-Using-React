@@ -1,18 +1,79 @@
+:root {
+  --primary-color: #d4edda;   /* Light Green */
+  --secondary-color: #155724; /* Dark Green */
+  --accent-color: #28a745;    /* Accent Green */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--secondary-color);
 }
 
 input[type="text"] {
-  padding: 8px;
-  margin: 8px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  width: 300px;
+  max-width: 80%;
 }
 
 button {
-  margin: 8px;
-  padding: 8px 16px;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+  color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #ddd;
+  background-color: darken(var(--accent-color), 10%);
+}
+
+button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.task span {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.task input[type="text"] {
+  width: 70%;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
 }
